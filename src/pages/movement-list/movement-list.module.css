@@ -1,0 +1,44 @@
+.container {
+  max-width: var(--max-with-contianer);
+  margin-left: auto;
+  margin-right: auto;
+  padding: 5px;
+}
+.header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 5px solid var(--secondary_color);
+  gap: 10px;
+}
+.header h1 {
+  font-size: 2.2rem;
+  font-weight: 300;
+}
+
+.detail {
+  width: 100%;
+  font-size: 13px;
+  text-align: right;
+}
+
+@media screen and (min-width: 600px) {
+  .detail {
+    width: fit-content;
+  }
+}
+.detail-balance {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--primary_color);
+}
+
+.info {
+  font-weight: 800;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px 0;
+}

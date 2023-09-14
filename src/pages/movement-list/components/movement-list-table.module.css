@@ -1,0 +1,21 @@
+.container {
+  padding-top: 10px;
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+.table-container {
+  min-width: 800px;
+}
+.table-header {
+  display: grid;
+  grid-template-columns: 17% 20% 25% 17% 1fr;
+  gap: 1px;
+}
+.table-cell {
+  padding: 10px;
+  color: var(--table-header-color);
+  background-color: var(--table-header-background-color);
+  font-size: var(--table-header-font-size);
+  font-weight: var(--table-header-font-weight);
+}
