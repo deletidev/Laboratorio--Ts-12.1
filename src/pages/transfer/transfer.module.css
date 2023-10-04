@@ -1,0 +1,10 @@
+.account-select {
+  width: 200px;
+}
+
+.container {
+  max-width: var(--max-with-contianer);
+  margin-left: auto;
+  margin-right: auto;
+  padding: 20px;
+}

@@ -1,0 +1,27 @@
+.header {
+  display: flex;
+  padding-bottom: 15px;
+  border-bottom: 5px solid var(--secondary_color);
+  gap: 15px;
+  flex-direction: column;
+}
+
+.header h1 {
+  font-size: 2.2rem;
+  font-weight: 300;
+}
+.header button {
+  margin-left: auto;
+  margin-right: auto;
+}
+@media screen and (min-width: 500px) {
+  .header {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .header button {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
