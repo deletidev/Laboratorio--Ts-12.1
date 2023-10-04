@@ -30,7 +30,6 @@ export const TransferFormComponent: React.FC<Props> = props => {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log(transfer);
     const formValidationResult = validateForm(transfer);
     setErrors(formValidationResult.errors);
     if (formValidationResult.succeeded) {
