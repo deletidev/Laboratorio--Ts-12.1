@@ -17,16 +17,30 @@ export const DialogComponent: React.FC<Props> = props => {
 
   const handleClick = () => {
     setDialog({ open: false, menssage: '', succeded: false });
-    if (redirect) {
+    if (redirect && redirect !== undefined) {
       window.location.replace(redirect);
     }
   };
+  // React.useEffect(() => {
+  //   if (dialog.open) {
+  //     document.body.style.overflow = 'hidden';
+  //   }
+
+  //   return () => console.log('unmounting...');
+  // }, [dialog.open]);
 
   return (
     <>
       {dialog.open && (
         <div className={styles.container}>
           <div className={styles.dialog}>
+            <span
+              className={`material-symbols-outlined ${
+                dialog.succeded ? styles.succeded : styles.error
+              }`}
+            >
+              {dialog.succeded ? 'check_circle' : 'cancel'}
+            </span>
             <p>{dialog.menssage}</p>
             <button onClick={handleClick}>Acceptar</button>
           </div>

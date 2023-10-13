@@ -1,7 +1,12 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
 import { AppLayout } from '@/layouts';
-import { HeaderComponent, MainContainerComponent } from '@/common';
+import {
+  Dialog,
+  DialogComponent,
+  HeaderComponent,
+  MainContainerComponent
+} from '@/common';
 
 import { getAccountList, saveTransfer } from './api';
 import { AccountVm, TransferVm } from './transfer.vm';
@@ -14,6 +19,12 @@ import { TransferFormComponent } from './components';
 
 export const TransferPage: React.FC = () => {
   const [accountList, setAccountList] = React.useState<AccountVm[]>([]);
+  const [dialog, setDialog] = React.useState<Dialog>({
+    open: false,
+    menssage: '',
+    succeded: false
+  });
+
   const { id } = useParams<{ id: string }>();
 
   React.useEffect(() => {
@@ -25,21 +36,36 @@ export const TransferPage: React.FC = () => {
   const handleTransfer = (transferInfo: TransferVm) => {
     saveTransfer(mapTransferFromVmToApi(transferInfo)).then(result => {
       result
-        ? alert('Transferencia realizada con éxito')
-        : alert('Error al realizar la transferencia');
+        ? setDialog({
+            open: true,
+            menssage: 'Transferencia realizada con éxito',
+            succeded: true
+          })
+        : setDialog({
+            open: true,
+            menssage: 'Error al realizar la transferencia',
+            succeded: false
+          });
     });
   };
 
   return (
-    <AppLayout>
-      <MainContainerComponent>
-        <HeaderComponent title="Transferencias Nacionales"></HeaderComponent>
-        <TransferFormComponent
-          accountList={accountList}
-          onTransfer={handleTransfer}
-          defaultAccountId={id}
-        ></TransferFormComponent>
-      </MainContainerComponent>
-    </AppLayout>
+    <>
+      <AppLayout>
+        <MainContainerComponent>
+          <HeaderComponent title="Transferencias Nacionales"></HeaderComponent>
+          <TransferFormComponent
+            accountList={accountList}
+            onTransfer={handleTransfer}
+            defaultAccountId={id}
+          ></TransferFormComponent>
+        </MainContainerComponent>
+      </AppLayout>
+      <DialogComponent
+        dialog={dialog}
+        setDialog={setDialog}
+        redirect="/account-list"
+      ></DialogComponent>
+    </>
   );
 };
