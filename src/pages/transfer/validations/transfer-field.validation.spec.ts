@@ -55,7 +55,7 @@ describe('transfer-field.validation specs', () => {
   });
 
   describe('validateAccountIdField', () => {
-    it('sould return false when iban is empty', () => {
+    it('sould return false when accountId is empty', () => {
       //Arrange
       const value = '';
 
@@ -67,7 +67,7 @@ describe('transfer-field.validation specs', () => {
       expect(result.errorMessage).toEqual(REQUIRED_FIELD_MESSAGE);
     });
 
-    it('sould return true when iban is well formed', () => {
+    it('sould return true when accountId is well formed', () => {
       //Arrange
       const value = '1';
 
@@ -79,7 +79,7 @@ describe('transfer-field.validation specs', () => {
     });
   });
   describe('validateNameField', () => {
-    it('sould return false when iban is empty', () => {
+    it('sould return false when name is empty', () => {
       //Arrange
       const value = '';
 
@@ -91,7 +91,7 @@ describe('transfer-field.validation specs', () => {
       expect(result.errorMessage).toEqual(REQUIRED_FIELD_MESSAGE);
     });
 
-    it('sould return true when iban is well formed', () => {
+    it('sould return true when name is well formed', () => {
       //Arrange
       const value = 'Jonh Doe';
 
@@ -103,7 +103,7 @@ describe('transfer-field.validation specs', () => {
     });
   });
   describe('validateAmountField', () => {
-    it('sould return false when iban is empty', () => {
+    it('sould return false when amount is empty', () => {
       //Arrange
       const value = -1;
 
@@ -115,7 +115,7 @@ describe('transfer-field.validation specs', () => {
       expect(result.errorMessage).toEqual(INVALID_AMOUNT_MESSAGE);
     });
 
-    it('sould return true when iban is well formed', () => {
+    it('sould return true when amount is well formed', () => {
       //Arrange
       const value = 1;
 
@@ -128,7 +128,7 @@ describe('transfer-field.validation specs', () => {
   });
 
   describe('validateConceptField', () => {
-    it('sould return false when iban is empty', () => {
+    it('sould return false when concept is empty', () => {
       //Arrange
       const value = '';
 
@@ -140,7 +140,7 @@ describe('transfer-field.validation specs', () => {
       expect(result.errorMessage).toEqual(REQUIRED_FIELD_MESSAGE);
     });
 
-    it('sould return true when iban is well formed', () => {
+    it('sould return true when concept is well formed', () => {
       //Arrange
       const value = 'Concept';
 
@@ -152,7 +152,7 @@ describe('transfer-field.validation specs', () => {
     });
   });
   describe('validateRealDateTransferField', () => {
-    it('should return true when date is not informed', () => {
+    it('should return true when realDate is not informed', () => {
       // Arrange
       const value = undefined;
 
@@ -163,7 +163,7 @@ describe('transfer-field.validation specs', () => {
       expect(result.succeeded).toBeTruthy();
     });
 
-    it('should return false when date is before today', () => {
+    it('should return false when realDate is before today', () => {
       // Arrange
       const value = new Date();
       const myDate = new Date(value.setDate(value.getDate() - 1))
@@ -178,7 +178,7 @@ describe('transfer-field.validation specs', () => {
       expect(result.errorMessage).toEqual(INVALID_REAL_DATE_TRANSFER_MESSAGE);
     });
 
-    it('should return true when date is after today', () => {
+    it('should return true when realDate is after today', () => {
       // Arrange
       const value = new Date();
       const myDate = new Date(value.setDate(value.getDate() + 1))

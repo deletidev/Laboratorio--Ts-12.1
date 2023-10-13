@@ -15,6 +15,7 @@ import {
 import classes from './movement-list.module.css';
 import { MovementListTableComponent } from './components/movement-list-table.component';
 import { AppLayout } from '@/layouts';
+import { MainContainerComponent } from '@/common';
 
 export const MovementListPage: React.FC = () => {
   const [infoAcount, setInfoAccount] = React.useState<InfoAccountVm>(
@@ -39,7 +40,7 @@ export const MovementListPage: React.FC = () => {
 
   return (
     <AppLayout>
-      <div className={classes.container}>
+      <MainContainerComponent>
         <div className={classes.header}>
           <h1>Saldos y Últimos movimientos</h1>
           <div className={classes.detail}>
@@ -56,7 +57,7 @@ export const MovementListPage: React.FC = () => {
         <MovementListTableComponent
           movementsList={movementsList}
         ></MovementListTableComponent>
-      </div>
+      </MainContainerComponent>
     </AppLayout>
   );
 };

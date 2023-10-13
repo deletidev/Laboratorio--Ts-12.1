@@ -1,11 +1,12 @@
 import React from 'react';
+
 import { AppLayout } from '@/layouts';
-import { AccountVm } from './account-list.vm';
-import classes from './account-list.page.module.css';
-import { AccountListTableComponent } from './components/account-list-table.component';
+import { HeaderComponent, MainContainerComponent } from '@/common';
+
 import { getAccountList } from './api';
 import { mapAccountListFromApiToVm } from './account-list.mapper';
-import { HeaderComponent } from '@/common';
+import { AccountVm } from './account-list.vm';
+import { AccountListTableComponent } from './components/account-list-table.component';
 
 export const AccountListPage: React.FC = () => {
   const [accountList, setAccountList] = React.useState<AccountVm[]>([]);
@@ -18,13 +19,13 @@ export const AccountListPage: React.FC = () => {
 
   return (
     <AppLayout>
-      <div className={classes.root}>
+      <MainContainerComponent>
         <HeaderComponent
           title="Mis cuentas"
           buttonTitle="AGREGAR NUEVA CUENTA"
         ></HeaderComponent>
         <AccountListTableComponent accountList={accountList} />
-      </div>
+      </MainContainerComponent>
     </AppLayout>
   );
 };

@@ -24,8 +24,8 @@
 }
 
 .usuario p:before {
-  content: "";
-  background: url(assets/icon-user.svg) no-repeat center center;
+  content: '';
+  background: url('/assets/icon-user.svg') no-repeat center center;
   width: 40px;
   height: 15px;
   position: relative;

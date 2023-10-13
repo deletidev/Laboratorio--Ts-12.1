@@ -190,14 +190,16 @@ button {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #22c6cb;
+  background: var(--primary_color);
   border: none;
-  padding: 0.8em 1.5em;
+  padding: 0.6em 1.5em;
   border-radius: var(--element-radius);
   color: #ffffff;
   cursor: pointer;
-  font-weight: 900;
+  font-weight: 700;
+  font-size: 14px;
   transition: all ease 0.2s;
+  font-family: inherit;
 }
 
 button:hover {

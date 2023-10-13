@@ -1,7 +1,7 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
 import { AppLayout } from '@/layouts';
-import { HeaderComponent } from '@/common';
+import { HeaderComponent, MainContainerComponent } from '@/common';
 
 import { getAccountList, saveTransfer } from './api';
 import { AccountVm, TransferVm } from './transfer.vm';
@@ -11,7 +11,6 @@ import {
 } from './transfer.mapper';
 
 import { TransferFormComponent } from './components';
-import styles from './transfer.module.css';
 
 export const TransferPage: React.FC = () => {
   const [accountList, setAccountList] = React.useState<AccountVm[]>([]);
@@ -33,14 +32,14 @@ export const TransferPage: React.FC = () => {
 
   return (
     <AppLayout>
-      <div className={styles.container}>
+      <MainContainerComponent>
         <HeaderComponent title="Transferencias Nacionales"></HeaderComponent>
         <TransferFormComponent
           accountList={accountList}
           onTransfer={handleTransfer}
           defaultAccountId={id}
         ></TransferFormComponent>
-      </div>
+      </MainContainerComponent>
     </AppLayout>
   );
 };

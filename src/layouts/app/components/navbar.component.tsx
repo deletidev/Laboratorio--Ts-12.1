@@ -37,6 +37,17 @@ export const NavbarComponent: React.FC = () => {
         >
           <Link to={appRoutes.transfer}>Transferencias</Link>
         </li>
+        {pathname.includes('create-account') && (
+          <li
+            className={
+              pathname.startsWith(appRoutes.createAccount)
+                ? classes.selected
+                : ''
+            }
+          >
+            <Link to={appRoutes.createAccount}>Nueva Cuenta</Link>
+          </li>
+        )}
       </ul>
     </nav>
   );

@@ -18,6 +18,6 @@ export const mapTransferFromVmToApi = (
   amount: transfer.amount,
   concept: transfer.concept,
   notes: transfer.notes,
-  transferDate: new Date().toDateString(),
+  transferDate: new Date().toISOString(),
   realTransferDate: transfer.realDateTransfer ?? ''
 });

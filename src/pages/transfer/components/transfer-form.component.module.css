@@ -11,8 +11,6 @@
 }
 .form-container div {
   display: flex;
-  /* flex-wrap: wrap; */
-  align-items: baseline;
   justify-content: flex-start;
   margin-bottom: 10px;
   gap: 10px;
@@ -30,6 +28,7 @@
   flex: 1;
 }
 .form-container select {
+  width: 200px;
   margin-bottom: 10px;
 }
 .form-container .small-input {
@@ -45,6 +44,7 @@
 
 @media screen and (min-width: 670px) {
   .form-container div {
+    align-items: baseline;
     flex-direction: row;
     flex-wrap: wrap;
   }

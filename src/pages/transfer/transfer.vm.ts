@@ -22,7 +22,7 @@ export const createEmptyTransferVm = (): TransferVm => ({
   concept: '',
   notes: '',
   dateTransfer: '',
-  realDateTransfer: undefined,
+  realDateTransfer: '',
   email: ''
 });
 

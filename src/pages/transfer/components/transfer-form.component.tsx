@@ -34,6 +34,7 @@ export const TransferFormComponent: React.FC<Props> = props => {
     setErrors(formValidationResult.errors);
     if (formValidationResult.succeeded) {
       onTransfer(transfer);
+      setTransfer(createEmptyTransferVm());
     }
   };
 
@@ -72,6 +73,7 @@ export const TransferFormComponent: React.FC<Props> = props => {
             name="iban"
             id="iban"
             onChange={handleFieldChange}
+            value={transfer.iban}
           />
           <p className={styles.error}> {errors.iban}</p>
         </div>
@@ -82,17 +84,19 @@ export const TransferFormComponent: React.FC<Props> = props => {
             name="name"
             id="name"
             onChange={handleFieldChange}
+            value={transfer.name}
           />
           <p className={styles.error}> {errors.name}</p>
         </div>
         <div>
-          <label htmlFor="amount">Beneficiario</label>
+          <label htmlFor="amount">Cantidad</label>
           <input
             type="number"
             name="amount"
             id="amount"
             onChange={handleFieldChange}
             className={styles.smallInput}
+            value={transfer.amount}
           />
           <p className={styles.error}> {errors.amount}</p>
         </div>
@@ -103,6 +107,7 @@ export const TransferFormComponent: React.FC<Props> = props => {
             name="concept"
             id="concept"
             onChange={handleFieldChange}
+            value={transfer.concept}
           />
           <p className={styles.error}>{errors.concept}</p>
         </div>
@@ -113,6 +118,7 @@ export const TransferFormComponent: React.FC<Props> = props => {
             name="notes"
             id="notes"
             onChange={handleFieldChange}
+            value={transfer.notes}
           />
           <p className={styles.error}>{errors.notes}</p>
         </div>
@@ -130,6 +136,7 @@ export const TransferFormComponent: React.FC<Props> = props => {
               id="realDateTransfer"
               type="date"
               onChange={handleFieldChange}
+              value={transfer.realDateTransfer}
             />
           </div>
           <p className={styles.error}>{errors.realDateTransfer}</p>
@@ -145,6 +152,7 @@ export const TransferFormComponent: React.FC<Props> = props => {
               type="email"
               id="email"
               onChange={handleFieldChange}
+              value={transfer.email}
             />
           </div>
           <p className={styles.error}>{errors.email}</p>

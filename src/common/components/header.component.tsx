@@ -1,3 +1,7 @@
+import { Link } from 'react-router-dom';
+
+import { appRoutes } from '@/core/router';
+
 import styles from './header.component.module.css';
 
 interface Props {
@@ -11,7 +15,7 @@ export const HeaderComponent: React.FC<Props> = props => {
   return (
     <div className={styles.header}>
       <h1>{title}</h1>
-      {buttonTitle && <button type="button">{buttonTitle}</button>}
+      {buttonTitle && <Link to={appRoutes.createAccount}>{buttonTitle}</Link>}
     </div>
   );
 };
