@@ -21,13 +21,11 @@ export const DialogComponent: React.FC<Props> = props => {
       window.location.replace(redirect);
     }
   };
-  // React.useEffect(() => {
-  //   if (dialog.open) {
-  //     document.body.style.overflow = 'hidden';
-  //   }
-
-  //   return () => console.log('unmounting...');
-  // }, [dialog.open]);
+  React.useEffect(() => {
+    if (dialog.open) {
+      document.body.style.overflow = 'hidden';
+    }
+  }, [dialog.open]);
 
   return (
     <>
