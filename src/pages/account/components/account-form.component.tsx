@@ -26,22 +26,28 @@ export const AccountFormComponent: React.FC<Props> = props => {
 
     const formValidationResult = validateForm(account);
     setErrors(formValidationResult.errors);
+
     if (formValidationResult.succeeded) {
-      saveAccount(mapAccountInfoFromVmToApi(account)).then(result => {
-        if (result) {
-          hadleDialog({
-            open: true,
-            menssage: 'Cuenta creada con éxito',
-            succeded: true
-          });
-        } else {
-          hadleDialog({
-            open: true,
-            menssage: 'Error al crear la nueva cuenta',
-            succeded: false
-          });
-        }
-      });
+      saveAccount(mapAccountInfoFromVmToApi(account))
+        .then(result => {
+          if (result) {
+            hadleDialog({
+              open: true,
+              menssage: 'Cuenta creada con éxito',
+              succeded: true,
+              redirect: '/account-list'
+            });
+          }
+        })
+        .catch(
+          error =>
+            error &&
+            hadleDialog({
+              open: true,
+              menssage: 'Error al crear la nueva cuenta, inténtelo más tarde',
+              succeded: false
+            })
+        );
     }
   };
 

@@ -110,39 +110,6 @@
   ],
   "transfer": [
     {
-      "accountId": "2",
-      "iban": "ES6621000418401234567891",
-      "name": "Pepe",
-      "amount": "15",
-      "concept": "Pizza",
-      "notes": "",
-      "transferDate": "Fri Oct 13 2023",
-      "realTransferDate": "",
-      "id": 1
-    },
-    {
-      "accountId": "1",
-      "iban": "ES6621000418401234567891",
-      "name": "Rocio",
-      "amount": "50",
-      "concept": "Fisio",
-      "notes": "",
-      "transferDate": "Fri Oct 13 2023",
-      "realTransferDate": "2023-10-16",
-      "id": 2
-    },
-    {
-      "accountId": "1",
-      "iban": "ES6621000418401234567891",
-      "name": "Rocio",
-      "amount": "50",
-      "concept": "Fisio",
-      "notes": "",
-      "transferDate": "2023-10-13T12:08:33.526Z",
-      "realTransferDate": "2023-10-16",
-      "id": 3
-    },
-    {
       "accountId": "1",
       "iban": "ES6621000418401234567891",
       "name": "Rocio",
@@ -154,48 +121,15 @@
       "id": 4
     },
     {
-      "accountId": "1",
-      "iban": "ES6000491500051234567892",
-      "name": "Rita",
-      "amount": "20",
-      "concept": "Gas",
-      "notes": "sas",
-      "transferDate": "2023-10-13T14:32:28.106Z",
-      "realTransferDate": "2023-10-17",
-      "id": 5
-    },
-    {
-      "accountId": "1",
-      "iban": "ES6000491500051234567892",
-      "name": "Pepe",
-      "amount": "10",
-      "concept": "dsd",
-      "notes": "sds",
-      "transferDate": "2023-10-13T14:34:41.954Z",
-      "realTransferDate": "",
-      "id": 6
-    },
-    {
       "accountId": "3",
-      "iban": "ES6000491500051234567892",
-      "name": "Teo",
-      "amount": "20",
-      "concept": "dede",
-      "notes": "deed",
-      "transferDate": "2023-10-13T14:35:51.788Z",
-      "realTransferDate": "2023-10-16",
-      "id": 7
-    },
-    {
-      "accountId": "2",
-      "iban": "ES7100302053091234567895",
-      "name": "Pepe",
-      "amount": "20",
-      "concept": "res",
-      "notes": "",
-      "transferDate": "2023-10-13T18:16:38.585Z",
-      "realTransferDate": "2023-10-16",
-      "id": 8
+      "iban": "ES1000492352082414205416",
+      "name": "xs",
+      "amount": "4",
+      "concept": "sd",
+      "notes": "sd",
+      "transferDate": "2023-10-16T09:40:01.922Z",
+      "realTransferDate": "",
+      "id": 5
     }
   ]
 }

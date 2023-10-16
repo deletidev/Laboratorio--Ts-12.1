@@ -19,6 +19,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  text-align: center;
 }
 .dialog > * + * {
   margin-top: 10px;
@@ -33,4 +34,5 @@
 }
 .dialog button {
   margin-top: 1.8rem;
+  margin-bottom: 0.4rem;
 }

@@ -1,7 +1,7 @@
-import React from "react";
-import classes from "./header.component.module.css";
-import logoHeader from "/assets/logo_header_white.svg";
-import { useProfileContext } from "@/core/profile";
+import React from 'react';
+import classes from './header.component.module.css';
+import logoHeader from '/assets/logo_header_white.svg';
+import { useProfileContext } from '@/core/providers';
 
 export const HeaderComponent: React.FC = () => {
   const { userName } = useProfileContext();

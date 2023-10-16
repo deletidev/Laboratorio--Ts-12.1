@@ -1,17 +1,20 @@
-import * as React from "react";
+import * as React from 'react';
 import {
   HeaderComponent,
   NavbarComponent,
-  FooterComponent,
-} from "./components";
-import classes from "./app-layout.module.css";
+  FooterComponent
+} from './components';
+import classes from './app-layout.module.css';
+import { DialogComponent } from '@/common';
+import { useDialogContext } from '@/core/providers';
 
 interface Props {
   children: React.ReactNode;
 }
 
-export const AppLayout: React.FC<Props> = (props) => {
+export const AppLayout: React.FC<Props> = props => {
   const { children } = props;
+  const { dialog, setDialog } = useDialogContext();
 
   return (
     <>
@@ -19,6 +22,7 @@ export const AppLayout: React.FC<Props> = (props) => {
       <NavbarComponent />
       <main className={classes.mainContent}>{children}</main>
       <FooterComponent />
+      <DialogComponent dialog={dialog} setDialog={setDialog}></DialogComponent>
     </>
   );
 };

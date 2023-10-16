@@ -1,12 +1,12 @@
-import React from "react";
-import { Credentials } from "./login.vm";
-import { LoginFormComponent } from "./components/login-form.component";
-import { useNavigate } from "react-router-dom";
-import { useProfileContext } from "@/core/profile";
-import { isValidLogin } from "./api";
-import { mapCredentialFromVmToApi } from "./login.mapper";
-import { appRoutes } from "@/core/router";
-import classes from "./login.page.module.css";
+import React from 'react';
+import { Credentials } from './login.vm';
+import { LoginFormComponent } from './components/login-form.component';
+import { useNavigate } from 'react-router-dom';
+import { useProfileContext } from '@/core/providers';
+import { isValidLogin } from './api';
+import { mapCredentialFromVmToApi } from './login.mapper';
+import { appRoutes } from '@/core/router';
+import classes from './login.page.module.css';
 
 export const LoginPage: React.FC = () => {
   const navigate = useNavigate();
@@ -14,12 +14,12 @@ export const LoginPage: React.FC = () => {
 
   const handleSubmit = (credentials: Credentials) => {
     const apiCredential = mapCredentialFromVmToApi(credentials);
-    isValidLogin(apiCredential).then((isValid) => {
+    isValidLogin(apiCredential).then(isValid => {
       if (isValid) {
         setUserProfile(credentials.user);
         navigate(appRoutes.accountList);
       } else {
-        alert("Usuario o clave no correctas ppsst: admin@email.com / test ");
+        alert('Usuario o clave no correctas ppsst: admin@email.com / test ');
       }
     });
   };

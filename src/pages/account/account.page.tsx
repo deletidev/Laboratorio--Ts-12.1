@@ -1,34 +1,19 @@
 import React from 'react';
 
 import { AppLayout } from '@/layouts';
-import {
-  Dialog,
-  DialogComponent,
-  HeaderComponent,
-  MainContainerComponent
-} from '@/common';
+import { HeaderComponent, MainContainerComponent } from '@/common';
 import { AccountFormComponent } from './components';
+import { useDialogContext } from '@/core/providers/dialog.component.context';
 
 export const AccountPage: React.FC = () => {
-  const [dialog, setDialog] = React.useState<Dialog>({
-    open: false,
-    menssage: '',
-    succeded: false
-  });
+  const { setDialog } = useDialogContext();
 
   return (
-    <>
-      <AppLayout>
-        <MainContainerComponent>
-          <HeaderComponent title="Cuenta Bancaria"></HeaderComponent>
-          <AccountFormComponent hadleDialog={setDialog}></AccountFormComponent>
-        </MainContainerComponent>
-      </AppLayout>
-      <DialogComponent
-        dialog={dialog}
-        setDialog={setDialog}
-        redirect="/account-list"
-      ></DialogComponent>
-    </>
+    <AppLayout>
+      <MainContainerComponent>
+        <HeaderComponent title="Cuenta Bancaria"></HeaderComponent>
+        <AccountFormComponent hadleDialog={setDialog}></AccountFormComponent>
+      </MainContainerComponent>
+    </AppLayout>
   );
 };
